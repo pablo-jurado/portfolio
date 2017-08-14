@@ -265,7 +265,6 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
 html {
    height: 100%;
 }
@@ -345,3 +344,31 @@ body {
   margin-top: -4px;
   left: 8px;
 }
+
+.portfolio-container {
+  display: flex;
+}
+
+.column { width: 33.3%; }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
+  box-sizing: border-box;
+  width: 100%;
+  height: 450px;
+  background: lightblue;
+  border: solid 5px #fff;
+  transition: all 0.2s ease;
+}
+
+.image:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0.9);
+  border-color: lightblue;
+}
+
+.row .image { height: 225px; }
