@@ -1,4 +1,5 @@
-$(document).ready(function(){
+/* global $ */
+$(document).ready(function () {
 
   $('.main').onepage_scroll({
      sectionContainer: 'section',     // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -17,14 +18,24 @@ $(document).ready(function(){
      direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
   });
 
-  function animateIn(index) {
+  function animateIn (index) {
+    // page 1 animation
+    let headerOpacity = $('#headerIMG').css('opacity')
+    if (index === 1 && headerOpacity === '0') {
+      $('#headerIMG')
+        .velocity('transition.slideLeftBigIn', 1200)
+      $('#headerText')
+        .velocity('transition.slideRightBigIn', 1200)
+    }
+
+    // title animation
     $('.page' + index + ' h4').velocity({
       opacity: '100',
       width: '100'
-    }, 400);
+    }, 400)
   }
 
   // trigger first animation
   animateIn(1)
 
-});
+})

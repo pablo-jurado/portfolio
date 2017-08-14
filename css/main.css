@@ -273,7 +273,7 @@ body {
   background: #E2E4E7;
   padding: 0;
   text-align: center;
-  font-family: 'open sans';
+  font-family: 'Fira Mono', monospace;
   position: relative;
   margin: 0;
   height: 100%;
@@ -301,10 +301,9 @@ body {
   opacity: 0;
 }
 
-.page1, .page3 {
-  background: white;
-}
-
+/************************/
+/***** Pagination *******/
+/************************/
 .onepage-pagination {
   position: absolute;
   right: 10px;
@@ -330,7 +329,7 @@ body {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(0,0,0,0.85);
+  background: #fff;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -339,10 +338,66 @@ body {
 .onepage-pagination li a.active:before{
   width: 10px;
   height: 10px;
-  background: rgba(0,0,0,0.85);
-  border: 1px solid black;
+  background: #9e9e9e;
+  border: 1px solid #9e9e9e;
   margin-top: -4px;
   left: 8px;
+}
+
+/********************/
+/***** PAGE 1 *******/
+/********************/
+.page1 {
+  background: #272727;
+  color: #9e9e9e;
+  display: flex;
+  justify-content: center;
+}
+
+.page1 .page-container {
+  position: relative;
+}
+
+.page1 header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page1 header img, .page1 header h2 {
+  opacity: 0;
+}
+.page1 header img {
+  margin-bottom: 20px;
+  width: 60vw;
+}
+.page1 .links { position: relative; }
+
+.page1 .links i {
+  margin: 5px;
+  transition: all 0.2s ease;
+}
+
+.page1 .links i:hover {
+  color: #2196f3;
+  transform: scale(1.2);
+}
+
+/********************/
+/***** PAGE 2 *******/
+/********************/
+.page2 {
+  background: #272727;
+  color: #9e9e9e;
+}
+
+/********************/
+/***** PAGE 3 *******/
+/********************/
+.page3 {
+  background: #272727;
+  color: #9e9e9e;
 }
 
 .portfolio-container {
@@ -360,15 +415,19 @@ body {
   box-sizing: border-box;
   width: 100%;
   height: 450px;
-  background: lightblue;
-  border: solid 5px #fff;
+  border: solid 5px #272727;
   transition: all 0.2s ease;
 }
 
 .image:hover {
-  background: rgba(255, 255, 255, 0.5);
   transform: scale(0.9);
-  border-color: lightblue;
+  opacity: 0.5;
 }
 
 .row .image { height: 225px; }
+
+.blue { background: #2196f3; }
+.darkblue { background: #3f51b5; }
+.green { background: #4caf50; }
+.purple { background: #673ab7; }
+.cyan { background: #00bcd4; }
