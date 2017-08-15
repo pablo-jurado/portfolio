@@ -42,8 +42,8 @@ $(document).ready(function () {
     // page 3 animation
     if (index === 3 && !isImageShowing) {
       isImageShowing = true
-      $('.page3 .image')
-        .velocity('transition.fadeIn', { stagger: 50 })
+      $('.page3 .image-container')
+        .velocity('transition.fadeIn', { stagger: 100 })
     }
 
     // title animation
