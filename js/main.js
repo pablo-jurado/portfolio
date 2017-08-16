@@ -42,8 +42,8 @@ $(document).ready(function () {
     // page 3 animation
     if (index === 3 && !isImageShowing) {
       isImageShowing = true
-      $('.page3 .image-container')
-        .velocity('transition.fadeIn', { stagger: 100 })
+      $('#programmingSlide .image-container')
+        .velocity('transition.shrinkIn')
     }
 
     // title animation
@@ -52,7 +52,32 @@ $(document).ready(function () {
       width: '100'
     }, 400)
   }
+  // portfolio-nav
+  var prog = $('#programmingSlide .image-container')
+  var web = $('#webSlide .image-container')
+
+  var graphic = $('#graphicSlide .image-container')
+  var anima = $('#animationSlide .image-container')
+
+  function navClick (e) {
+    var id = e.target.id
+
+    if (id) eraseAllSlides()
+    if (id === 'web') web.velocity('transition.shrinkIn')
+    if (id === 'programming') prog.velocity('transition.shrinkIn')
+    if (id === 'graphic') graphic.velocity('transition.shrinkIn')
+    if (id === 'animation') anima.velocity('transition.shrinkIn')
+  }
+
+  function eraseAllSlides () {
+    $('.page3 .portfolio-container .image-container').velocity('transition.fadeOut')
+  }
+
+  var portfolioNav = $('#portfolioNav')
+
+  portfolioNav.click(navClick)
 
   // trigger first animation
+  eraseAllSlides()
   animateIn(1)
 })

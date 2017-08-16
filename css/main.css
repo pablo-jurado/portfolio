@@ -415,31 +415,37 @@ i:hover {
 
 .page3 .page-container {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .portfolio-container {
-  height: 90vh;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.column { width: 33.3%; }
+.web-design, .programming, .graphic-design, .animation {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
 .row {
   display: flex;
   flex-direction: row;
 }
 
-.half { height: 50%; }
+.half {
+  height: 20vw;
+  width: 20vw;
+}
 
 .image-container {
   box-sizing: border-box;
-  margin: 10px;
-  opacity: 0;
-  position: relative;
+  margin: 20px 10px;
+  /*position: relative;*/
   overflow: hidden;
 }
 
@@ -454,16 +460,18 @@ i:hover {
 }
 
 .image-container .description {
+  box-sizing: border-box;
   height: 100%;
   position: absolute;
-  padding: 25px;
+  padding: 5px;
+  font-size: 0.9em;
   background: rgba(0, 0, 0, 0.85);
   opacity: 0;
   transition-delay: 0.5s;
   transition: all 0.5s ease;
   z-index: 100;
   transform: translateY(100%);
-  margin: 10px;
+  margin: 10px 10px 0 10px;
 }
 
 .image-container:hover img {
@@ -481,17 +489,64 @@ i:hover {
 .purple { background: #673ab7; }
 .cyan { background: #00bcd4; }
 
+.portfolio-nav ul {
+  list-style: none;
+}
+
+.portfolio-nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.nav-arrows span {
+  position: absolute;
+  z-index: 2000;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border: 8px solid #ddd;
+  border: 8px solid rgba(150,150,150,0.4);
+  margin-top: -40px;
+  cursor: pointer;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: border-color 0.2s ease;
+}
+
+.nav-arrows .nav-arrow-prev {
+  left: 5%;
+  border-right: none;
+  border-top: none;
+}
+
+.nav-arrows .nav-arrow-next {
+  right: 5%;
+  border-left: none;
+  border-bottom: none;
+}
+
+.nav-arrows span:hover {
+  border-color: #9e9e9e;
+}
+
 /****************************/
 /***** media queries ********/
 /****************************/
 @media (max-width:768px) {
   .portfolio-container {
     flex-direction: column;
-    height: 100vh;
-    justify-content: center;
   }
   .column {
     width: 100%;
     display: flex;
+    justify-content: center;
+  }
+
+  .half {
+    height: 30vw;
+    width: 30vw;
   }
 }
