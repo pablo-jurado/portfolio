@@ -382,19 +382,24 @@ body {
 }
 
 i {
-  /*height: 20px;
-  width: 20px;*/
-  margin: 5px;
-  padding: 10px;
+  height: 50px;
+  width: 50px;
   transition: all 0.2s ease;
   border: solid 2px #9e9e9e;
   border-radius: 50%;
+  position: relative;
+}
+
+i:before {
+  position: relative;
+  top: 9px;
+  left: 0;
 }
 
 i:hover {
   color: #2196f3;
   border-color: #2196f3;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /********************/
@@ -424,12 +429,18 @@ i:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 50vw;
+  position: relative;
 }
 
 .web-design, .programming, .graphic-design, .animation {
   position: relative;
   display: flex;
   justify-content: center;
+}
+
+#web.active, #programming.active, #graphic.active, #animation.active {
+  border-bottom: solid 2px #2196f3;
 }
 
 .row {
@@ -491,11 +502,14 @@ i:hover {
 
 .portfolio-nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .portfolio-nav li {
   display: inline-block;
   margin: 0 10px;
+  padding: 5px 0;
 }
 
 .nav-arrows span {
@@ -536,17 +550,24 @@ i:hover {
 /***** media queries ********/
 /****************************/
 @media (max-width:768px) {
-  .portfolio-container {
+  .page3 h4 { display: none; }
+
+  .portfolio-nav {
+    font-size: 0.8em;
+  }
+  .web-design, .programming, .graphic-design, .animation {
     flex-direction: column;
+  }
+  .portfolio-container {
+    min-height: 120vw;
   }
   .column {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-
   .half {
-    height: 30vw;
-    width: 30vw;
+    height: 35vw;
+    width: 35vw;
   }
 }

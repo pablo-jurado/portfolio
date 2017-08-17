@@ -1,5 +1,6 @@
 /* global $ */
 $(document).ready(function () {
+  // main scroll setUp
   $('.main').onepage_scroll({
     sectionContainer: 'section',     // sectionContainer accepts any kind of selector in case you don't want to use section
     easing: 'ease',                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
@@ -17,8 +18,20 @@ $(document).ready(function () {
     direction: 'vertical'            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
   })
 
-  let isImageShowing = false
-  let isHeaderShowing = false
+  // DOM elements
+  var btnNext = $('#navArrowNext')
+  var btnPrev = $('#navArrowPrev')
+  var progSlide = $('#programmingSlide .image-container')
+  var webSlide = $('#webSlide .image-container')
+  var graphicSlide = $('#graphicSlide .image-container')
+  var animaSlide = $('#animationSlide .image-container')
+  var portfolioNav = $('#portfolioNav')
+  var portfolioImgArr = [progSlide, webSlide, graphicSlide, animaSlide]
+
+  // global variables
+  var isImageShowing = false
+  var isHeaderShowing = false
+  var portfolioIndex = 0
 
   function animateContactMe () {
     $('.contact-me').velocity('transition.fadeIn', animateLinks)
@@ -42,8 +55,10 @@ $(document).ready(function () {
     // page 3 animation
     if (index === 3 && !isImageShowing) {
       isImageShowing = true
-      $('#programmingSlide .image-container')
-        .velocity('transition.shrinkIn')
+      $('#programming').addClass('active')
+      portfolioImgArr[portfolioIndex]
+        .delay(500)
+        .velocity('transition.flipBounceYIn')
     }
 
     // title animation
@@ -52,31 +67,64 @@ $(document).ready(function () {
       width: '100'
     }, 400)
   }
+
   // portfolio-nav
-  var prog = $('#programmingSlide .image-container')
-  var web = $('#webSlide .image-container')
-
-  var graphic = $('#graphicSlide .image-container')
-  var anima = $('#animationSlide .image-container')
-
   function navClick (e) {
     var id = e.target.id
 
     if (id) eraseAllSlides()
-    if (id === 'web') web.velocity('transition.shrinkIn')
-    if (id === 'programming') prog.velocity('transition.shrinkIn')
-    if (id === 'graphic') graphic.velocity('transition.shrinkIn')
-    if (id === 'animation') anima.velocity('transition.shrinkIn')
+
+    if (id === 'programming') portfolioIndex = 0
+    if (id === 'web') portfolioIndex = 1
+    if (id === 'graphic') portfolioIndex = 2
+    if (id === 'animation') portfolioIndex = 3
+
+    // add active to portfolio nav button
+    addActiveClass(portfolioIndex)
+    // animates next portfolio slide
+    portfolioImgArr[portfolioIndex]
+      .velocity('transition.expandIn')
+  }
+
+  function addActiveClass (index) {
+    var id = ''
+    $('#portfolioNav li').removeClass('active')
+
+    if (index === 0) id = 'programming'
+    if (index === 1) id = 'web'
+    if (index === 2) id = 'graphic'
+    if (index === 3) id = 'animation'
+
+    $('#' + id).addClass('active')
   }
 
   function eraseAllSlides () {
     $('.page3 .portfolio-container .image-container').velocity('transition.fadeOut')
   }
 
-  var portfolioNav = $('#portfolioNav')
+  function handleNext () {
+    eraseAllSlides()
+    portfolioIndex++
+    if (portfolioIndex === portfolioImgArr.length) {
+      portfolioIndex = 0
+    }
+    addActiveClass(portfolioIndex)
+    portfolioImgArr[portfolioIndex].velocity('transition.expandIn')
+  }
+
+  function handlePrev () {
+    eraseAllSlides()
+    portfolioIndex--
+    if (portfolioIndex < 0) {
+      portfolioIndex = portfolioImgArr.length - 1
+    }
+    addActiveClass(portfolioIndex)
+    portfolioImgArr[portfolioIndex].velocity('transition.expandIn')
+  }
 
   portfolioNav.click(navClick)
-
+  btnNext.click(handleNext)
+  btnPrev.click(handlePrev)
   // trigger first animation
   eraseAllSlides()
   animateIn(1)
