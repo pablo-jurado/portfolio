@@ -1,7 +1,13 @@
+# production
+
+# .sass-cache
+# css
+# js
+# node_modules
+
+# build
+
 .sass-cache
-
-css
-
-js
-
 node_modules
+sass
+src-js
