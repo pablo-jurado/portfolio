@@ -343,6 +343,41 @@ body {
   margin-top: -4px;
   left: 8px;
 }
+/********************/
+/***** LOADER *******/
+/********************/
+
+
+.loader-back-top {
+  height: 50%;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.loader-back-bottom {
+  height: 50%;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+}
+
+.loader-bar {
+  height: 2px;
+  width: 0%;
+  background: black;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 50;
+  transition: all 0.1s ease;
+}
+
 
 /********************/
 /***** PAGE 1 *******/
@@ -365,7 +400,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.page1 header img, .page1 header h2 {
+.page1 header img, .page1 header p, .page1 header h2 {
   opacity: 0;
 }
 .page1 header img {

@@ -125,7 +125,42 @@ $(document).ready(function () {
   portfolioNav.click(navClick)
   btnNext.click(handleNext)
   btnPrev.click(handlePrev)
-  // trigger first animation
+
+  // imgages loader
+  var imgCount = $('body img').length - 1
+  var loaderCount = 0
+  var loaderBar = $('.loader-bar')
+  $('.portfolio-container img').imagesLoaded()
+    .done(function (instance) {
+      animateLoaderBack()
+    })
+    .fail(function () {
+      console.log('all images loaded, at least one is broken')
+    })
+    .progress(function (instance, image) {
+      loaderCount += 1
+      var porcentage = Math.round(loaderCount * 100 / imgCount) + '%'
+      console.log(porcentage)
+      loaderBar.css({ width: porcentage })
+    })
+
+  function animateLoaderBack () {
+    loaderBar.css({ display: 'none' })
+
+    $('.loader-back-top').velocity({
+      properties: { top: '-100%' },
+      options: { duration: 750 }
+    })
+    $('.loader-back-bottom').velocity({
+      properties: { bottom: '-100%' },
+      options: {
+        duration: 750,
+        complete: function () {
+          animateIn(1).delay(500)
+        }
+      }
+    })
+  }
+
   eraseAllSlides()
-  animateIn(1)
 })
