@@ -1,0 +1,24 @@
+{
+  "author": "Pablo Jurado <pjurado85@gmail.com>",
+  "name": "pablo-jurado-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pablo-jurado/portfolio.git"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "uglifyjs": "~2.4.10",
+    "standard": "*"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "standard src-js/*.js"
+  }
+}
