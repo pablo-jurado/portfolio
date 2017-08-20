@@ -8,6 +8,7 @@ I like to redesign my portfolio every year just for fun and to try new libraries
 ## Tech/framework used
 
 Built with:
+* [html5 boilerplate](https://github.com/h5bp/html5-boilerplate)
 * Flexbox
 * Sass
 * jQuery
