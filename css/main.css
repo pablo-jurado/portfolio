@@ -2930,7 +2930,10 @@ body {
   background: #272727;
   color: #9e9e9e;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  background-image: url("../img/background1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .page1 .page-container {
   position: relative; }
