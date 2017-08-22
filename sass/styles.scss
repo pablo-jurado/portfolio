@@ -442,6 +442,30 @@ i:hover {
 .page2 {
   background: #272727;
   color: #9e9e9e;
+  background-image: url('../img/background2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page2 .page-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.about {
+  width: 35%;
+  margin: 30px;
+  padding: 15px;
+  text-align: right;
+}
+
+.page2 img {
+  border-radius: 50%;
+  box-shadow: 0 0 50px #000;
+  float: left;
 }
 
 /********************/
@@ -450,6 +474,10 @@ i:hover {
 .page3 {
   background: #272727;
   color: #9e9e9e;
+
+  background-image: url('../img/background3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page3 .page-container {
@@ -510,7 +538,7 @@ i:hover {
   position: absolute;
   padding: 5px;
   font-size: 0.9em;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(39, 39, 39, 0.95);
   opacity: 0;
   transition-delay: 0.5s;
   transition: all 0.5s ease;
