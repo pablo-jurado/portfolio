@@ -22,11 +22,10 @@ $('.main').onepage_scroll({
 var btnNext = $('#navArrowNext')
 var btnPrev = $('#navArrowPrev')
 var progSlide = $('#programmingSlide .image-container')
-var webSlide = $('#webSlide .image-container')
-var graphicSlide = $('#graphicSlide .image-container')
+var designSlide = $('#designSlide .image-container')
 var animaSlide = $('#animationSlide .image-container')
 var portfolioNav = $('#portfolioNav')
-var portfolioImgArr = [progSlide, webSlide, graphicSlide, animaSlide]
+var portfolioImgArr = [progSlide, designSlide, animaSlide]
 
 // global variables
 var isImageShowing = false
@@ -74,9 +73,8 @@ function navClick (e) {
   if (id) eraseAllSlides()
 
   if (id === 'programming') portfolioIndex = 0
-  if (id === 'web') portfolioIndex = 1
-  if (id === 'graphic') portfolioIndex = 2
-  if (id === 'animation') portfolioIndex = 3
+  if (id === 'design') portfolioIndex = 1
+  if (id === 'animation') portfolioIndex = 2
 
   // add active to portfolio nav button
   addActiveClass(portfolioIndex)
@@ -90,9 +88,8 @@ function addActiveClass (index) {
   $('#portfolioNav li').removeClass('active')
 
   if (index === 0) id = 'programming'
-  if (index === 1) id = 'web'
-  if (index === 2) id = 'graphic'
-  if (index === 3) id = 'animation'
+  if (index === 1) id = 'design'
+  if (index === 2) id = 'animation'
 
   $('#' + id).addClass('active')
 }

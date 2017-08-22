@@ -434,7 +434,6 @@ i:before {
 i:hover {
   color: #2196f3;
   border-color: #2196f3;
-  transform: scale(1.1);
 }
 
 /********************/
@@ -468,13 +467,13 @@ i:hover {
   position: relative;
 }
 
-.web-design, .programming, .graphic-design, .animation {
+.design, .programming, .animation {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-#web.active, #programming.active, #graphic.active, #animation.active {
+#design.active, #programming.active, #animation.active {
   border-bottom: solid 2px #2196f3;
 }
 
@@ -590,7 +589,7 @@ i:hover {
   .portfolio-nav {
     font-size: 0.8em;
   }
-  .web-design, .programming, .graphic-design, .animation {
+  .design, .programming, .animation {
     flex-direction: column;
   }
   .portfolio-container {
