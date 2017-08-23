@@ -177,8 +177,8 @@ function debounce (func, wait, immediate) {
 
 // modal
 $('.modal-btn').click(function () {
-  var id = this.id
-  $('#modal-container #modalBody').html('new content ' + id)
+  var img = '<img src="img/modal/' + this.id + '.jpg">'
+  $('#modal-container #modalBody').html(img)
   $('#modal-container').removeAttr('class').addClass('open')
 })
 
