@@ -16778,6 +16778,7 @@ var portfolioImgArr = [progSlide, webSlide, graphicSlide, animaSlide]
 
 // global variables
 var isImageShowing = false
+var isAboutShowing = false
 var isHeaderShowing = false
 var portfolioIndex = 0
 
@@ -16799,6 +16800,12 @@ function animateIn (index) {
     $('#headerText')
       .velocity('transition.slideRightBigIn', 1200, animateContactMe)
   }
+  // page 2 animation
+  if (index === 2 && !isAboutShowing) {
+    isAboutShowing = true
+    $('.page2 .about').velocity('transition.slideLeftBigIn', 1200)
+    $('.page2 img').velocity('transition.slideRightBigIn', 1200)
+  }
   // page 3 animation
   if (index === 3 && !isImageShowing) {
     isImageShowing = true
@@ -16816,6 +16823,7 @@ function animateIn (index) {
 }
 
 // portfolio-nav
+// TODO: check if clicks the same tab and no anumate if so
 function navClick (e) {
   var id = e.target.id
 
