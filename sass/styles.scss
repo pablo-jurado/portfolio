@@ -498,13 +498,13 @@ i:hover {
   position: relative;
 }
 
-.design, .programming, .animation {
+.web, .graphic, .programming, .animation {
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-#design.active, #programming.active, #animation.active {
+#web.active, #graphic.active, #programming.active, #animation.active {
   border-bottom: solid 2px #2196f3;
 }
 
