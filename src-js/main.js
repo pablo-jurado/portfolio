@@ -39,8 +39,7 @@ function animateContactMe () {
 }
 
 function animateLinks () {
-  $('.links i')
-    .velocity('transition.fadeIn', { stagger: 200 })
+  $('.links i').velocity('transition.fadeIn', { stagger: 200 })
 }
 
 function animateIn (index) {
@@ -61,6 +60,7 @@ function animateIn (index) {
   // page 3 animation
   if (index === 3 && !isImageShowing) {
     isImageShowing = true
+    $('.portfolioNav').velocity('transition.fadeIn')
     $('#programming').addClass('active')
     portfolioImgArr[portfolioIndex]
       .delay(500)
