@@ -16911,13 +16911,24 @@ function debounce (func, wait, immediate) {
 		var context = this, args = arguments;
 		var later = function() {
 			timeout = null;
-			if (!immediate) func.apply(context, args);
+			if (!immediate) func.apply(context, args)
 		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
+		var callNow = immediate && !timeout
+		clearTimeout(timeout)
+		timeout = setTimeout(later, wait)
+		if (callNow) func.apply(context, args)
 	};
 };
+
+// modal
+$('.modal-btn').click(function () {
+  var id = this.id
+  $('#modal-container #modalBody').html('new content ' + id)
+  $('#modal-container').removeAttr('class').addClass('open')
+})
+
+$('#modal-container').click(function() {
+  $(this).addClass('out')
+});
 
 eraseAllSlides()
