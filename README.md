@@ -5,6 +5,8 @@ I like to redesign my portfolio every year just for fun and to try new libraries
 
 > status: work in progress
 
+<img src="pablo_jurado_portfolio.jpg" alt="pablo jurado portfolio">
+
 ## Tech/framework used
 
 Built with:
