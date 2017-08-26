@@ -1,0 +1,25 @@
+/****************************/
+/***** media queries ********/
+/****************************/
+@media (max-width:768px) {
+  .page3 h4 { display: none; }
+
+  .portfolio-nav {
+    font-size: 0.8em;
+  }
+  .graphic, .web, .programming, .animation {
+    flex-direction: column;
+  }
+  .portfolio-container {
+    min-height: 120vw;
+  }
+  .column {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .half {
+    height: 35vw;
+    width: 35vw;
+  }
+}

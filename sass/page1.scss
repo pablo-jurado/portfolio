@@ -1,0 +1,42 @@
+/********************/
+/***** PAGE 1 *******/
+/********************/
+
+.page1 {
+  background: #272727;
+  color: #9e9e9e;
+  display: flex;
+  justify-content: center;
+  background-image: url('../img/background1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  .page-container {
+    position: relative;
+  }
+  header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  header img,  header p, header h2 {
+    opacity: 0;
+  }
+  header img {
+    margin-bottom: 20px;
+    width: 60vw;
+  }
+  .contact-me {
+    opacity: 0;
+  }
+  .links {
+    position: relative;
+  }
+  i {
+    opacity: 0;
+  }
+  a {
+    color: #9e9e9e;
+    text-decoration: none;
+  }
+}
