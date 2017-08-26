@@ -2,6 +2,18 @@
 /***** media queries ********/
 /****************************/
 @media (max-width:768px) {
+  .page2 {
+    .page-container {
+      flex-direction: column-reverse;
+    }
+    .about {
+      width: 80%;
+      text-align: left;
+    }
+    img {
+      margin: 0 auto;
+    }
+  }
   .page3 h4 { display: none; }
 
   .portfolio-nav {

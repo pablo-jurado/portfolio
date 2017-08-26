@@ -54,13 +54,13 @@ function animateIn (index) {
   // page 2 animation
   if (index === 2 && !isAboutShowing) {
     isAboutShowing = true
-    $('.page2 .about').velocity('transition.slideLeftBigIn', 1200)
+    $('.page2 .about .about-text').velocity('transition.slideLeftBigIn', 1200)
     $('.page2 img').velocity('transition.slideRightBigIn', 1200)
   }
   // page 3 animation
   if (index === 3 && !isImageShowing) {
     isImageShowing = true
-    $('.portfolioNav').velocity('transition.fadeIn')
+    $('.portfolio-nav').velocity('transition.fadeIn')
     $('#programming').addClass('active')
     portfolioImgArr[portfolioIndex]
       .delay(500)
@@ -169,18 +169,18 @@ function animateLoaderBack () {
 }
 
 function debounce (func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args)
-		};
-		var callNow = immediate && !timeout
-		clearTimeout(timeout)
-		timeout = setTimeout(later, wait)
-		if (callNow) func.apply(context, args)
-	};
+  var timeout
+  return function () {
+    var context = this, args = arguments
+    var later = function () {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+    var callNow = immediate && !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+    if (callNow) func.apply(context, args)
+  }
 };
 
 // modal
@@ -190,8 +190,8 @@ $('.modal-btn').click(function () {
   $('#modal-container').removeAttr('class').addClass('open')
 })
 
-$('#modal-container').click(function() {
+$('#modal-container').click(function () {
   $(this).addClass('out')
-});
+})
 
 eraseAllSlides()

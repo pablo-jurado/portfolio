@@ -20,12 +20,24 @@
     margin: 30px;
     padding: 15px;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-text {
     opacity: 0;
+  }
+  .about-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   img {
     border-radius: 50%;
+    border: solid 10px #9e9e9e;
     box-shadow: 0 0 50px #000;
-    float: left;
     opacity: 0;
+    width: 40vw;
+    height: 40vw;
   }
 }
