@@ -41,7 +41,7 @@ function animateContactMe () {
 function animateLinks () {
   $('.links i').velocity('transition.fadeIn', { stagger: 200 })
 }
-
+// intro animation
 function animateIn (index) {
   // page 1 animation
   if (index === 1 && !isHeaderShowing) {
@@ -168,6 +168,32 @@ function animateLoaderBack () {
   })
 }
 
+// modal
+$('.modal-btn-graphic').click(function (event) {
+  $('#modal-container #modalBody').html('')
+  var id = event.target.id
+
+  var img = '<img src="img/modal/' + id + '.jpg">'
+  $('#modal-container #modalBody').html(img)
+  $('#modal-container').removeAttr('class').addClass('open')
+})
+
+$('.modal-btn-anima').click(function (event) {
+  $('#modal-container #modalBody').html('')
+  var id = event.target.id
+
+  var movie = '<video width="50%" height="50%" autoplay controls>'
+  movie += '<source src="img/modal/' + id + '.mp4" type="video/mp4">'
+  movie += '</video>'
+
+  $('#modal-container #modalBody').html(movie)
+  $('#modal-container').removeAttr('class').addClass('open')
+})
+
+$('#modal-container').click(function () {
+  $(this).addClass('out')
+})
+
 function debounce (func, wait, immediate) {
   var timeout
   return function () {
@@ -181,17 +207,6 @@ function debounce (func, wait, immediate) {
     timeout = setTimeout(later, wait)
     if (callNow) func.apply(context, args)
   }
-};
-
-// modal
-$('.modal-btn').click(function () {
-  var img = '<img src="img/modal/' + this.id + '.jpg">'
-  $('#modal-container #modalBody').html(img)
-  $('#modal-container').removeAttr('class').addClass('open')
-})
-
-$('#modal-container').click(function () {
-  $(this).addClass('out')
-})
+}
 
 eraseAllSlides()
