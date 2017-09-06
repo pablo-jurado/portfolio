@@ -1,6 +1,14 @@
 /****************************/
 /***** media queries ********/
 /****************************/
+@media (max-width:1024px) {
+  .half {
+    height: 25vw;
+    width: 25vw;
+  }
+}
+
+
 @media (max-width:768px) {
   .page2 {
     .page-container {
@@ -33,5 +41,52 @@
   .half {
     height: 35vw;
     width: 35vw;
+  }
+}
+
+@media (max-width:414px) {
+  .page1 {
+    header {
+      i {
+        font-size: 1em;
+        height: 35px;
+        width: 35px;
+      }
+      img {
+        width: 90vw;
+      }
+    }
+  }
+  .page2 {
+    .about {
+      margin: 0;
+      font-size: 0.8em;
+    }
+    img {
+      width: 50vw;
+      height: 50vw;
+    }
+  }
+  .page3 {
+    .half {
+      height: 45vw;
+      width: 45vw;
+    }
+    .portfolio-container {
+      font-size: 0.5em;
+    }
+    i {
+      height: 35px;
+      width: 35px;
+    }
+    .image-container {
+      margin: 5px;
+      .description {
+        padding: 2.5px;
+        top: 5px;
+        right: 5px;
+        left: 5px;
+      }
+    }
   }
 }
