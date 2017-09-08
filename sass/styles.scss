@@ -46,9 +46,9 @@ i {
   height: 50px;
   width: 50px;
   transition: all 0.2s ease;
-  border: solid 2px #9e9e9e;
   border-radius: 50%;
   position: relative;
+  border: solid 2px #9e9e9e;
   &:before {
     position: relative;
     top: 9px;
@@ -66,6 +66,29 @@ i {
 .purple { background: #673ab7; }
 .cyan { background: #00bcd4; }
 
+
+.gradient-border {
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: 50%;
+  z-index: -1;
+  animation: animatedgradient 5s ease alternate infinite;
+  background-size: 300% 300%;
+  opacity: 0;
+  width: 42vw;
+  height: 42vw;
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 /************************/
 /***** Pagination *******/

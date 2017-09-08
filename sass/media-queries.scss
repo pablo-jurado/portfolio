@@ -8,22 +8,35 @@
   }
 }
 
-
 @media (max-width:768px) {
   .page2 {
     .page-container {
       flex-direction: column-reverse;
+      .about-img {
+        flex-direction: row;
+      }
     }
     .about {
       width: 80%;
       text-align: left;
     }
-    img {
-      margin: 0 auto;
+    .gradient-border {
     }
   }
-  .page3 h4 { display: none; }
-
+  .page3 {
+    h4 {
+      display: none;
+    }
+    .image-container {
+      margin: 10px;
+      .description {
+        padding: 2.5px;
+        top: 5px;
+        right: 5px;
+        left: 5px;
+      }
+    }
+  }
   .portfolio-nav {
     font-size: 0.8em;
   }
