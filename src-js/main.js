@@ -55,7 +55,7 @@ function animateIn (index) {
   if (index === 2 && !isAboutShowing) {
     isAboutShowing = true
     $('.page2 .about .about-text').velocity('transition.slideLeftBigIn', 1200)
-    $('.page2 .gradient-border').velocity('transition.slideRightBigIn', 1200)
+    $('.page2 .gradient-back').velocity('transition.slideRightBigIn', 1200)
   }
   // page 3 animation
   if (index === 3 && !isImageShowing) {

@@ -29,8 +29,24 @@
   }
 }
 
-#web.active, #graphic.active, #programming.active, #animation.active {
-  border-bottom: solid 2px #2196f3;
+// #web.active, #graphic.active, #programming.active, #animation.active {
+//   border-bottom: solid 2px #2196f3;
+// }
+
+.portfolio-nav li {
+  position: relative;
+  padding: 5px;
+  transition: all 0.2s ease-in-out;
+  height: 20px;
+}
+
+.portfolio-nav li.active .nav-back {
+  height: 3px;
+  margin-top: 5px;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  z-index: -1;
+  animation: animatedgradient 5s ease alternate infinite;
+  background-size: 300% 300%;
 }
 
 .row {
@@ -81,7 +97,7 @@
 }
 
 .portfolio-nav {
-  opacity: 0;
+  // opacity: 0;
   margin-top: 30px;
   ul {
     list-style: none;
