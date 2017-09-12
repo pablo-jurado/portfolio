@@ -39,6 +39,7 @@
   }
   .portfolio-nav {
     font-size: 0.8em;
+    margin-top: 0;
   }
   .graphic, .web, .programming, .animation {
     flex-direction: column;
@@ -79,6 +80,10 @@
       width: 50vw;
       height: 50vw;
     }
+    .gradient-border {
+      width: 52vw;
+      height: 52vw;
+    }
   }
   .page3 {
     .half {
@@ -100,6 +105,9 @@
         right: 5px;
         left: 5px;
       }
+    }
+    .nav-arrows {
+      display: none;
     }
   }
 }
