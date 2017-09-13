@@ -33,18 +33,6 @@ var isAboutShowing = false
 var isHeaderShowing = false
 var portfolioIndex = 0
 
-// check for phone fullscreen
-var body = document.documentElement;
-if (body.requestFullscreen) {
-  body.requestFullscreen();
-} else if (body.webkitrequestFullscreen) {
-  body.webkitrequestFullscreen();
-} else if (body.mozrequestFullscreen) {
-  body.mozrequestFullscreen();
-} else if (body.msrequestFullscreen) {
-  body.msrequestFullscreen();
-}
-
 function animateContactMe () {
   $('.contact-me').velocity('transition.fadeIn', animateLinks)
 }
@@ -194,7 +182,7 @@ $('.modal-btn-anima').click(function (event) {
   $('#modal-container #modalBody').html('')
   var id = event.target.id
 
-  var movie = '<video width="50%" height="50%" autoplay controls>'
+  var movie = '<video autoplay controls>'
   movie += '<source src="img/modal/' + id + '.mp4" type="video/mp4">'
   movie += '</video>'
 

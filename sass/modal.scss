@@ -20,7 +20,10 @@
   #modalBody {
     padding: 20px;
     img {
-      max-height: 80vh;
+      max-width: 80vw;
+    }
+    video {
+      max-width: 50vw;
     }
   }
   &.open {

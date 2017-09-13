@@ -20,15 +20,13 @@
       width: 80%;
       text-align: left;
     }
-    .gradient-back {
-    }
   }
   .page3 {
     h4 {
       display: none;
     }
     .page-container {
-      justify-content: flex-start;
+      // justify-content: flex-start;
     }
     .image-container {
       margin: 10px;
@@ -82,19 +80,23 @@
     .about {
       margin: 0;
       font-size: 0.8em;
+      padding: 0px 15px;
+      h2 {
+        margin: 0;
+      }
     }
     img {
-      width: 50vw;
-      height: 50vw;
+      width: 40vw;
+      height: 40vw;
     }
     .gradient-back {
-      width: 52vw;
-      height: 52vw;
+      width: 42vw;
+      height: 42vw;
     }
   }
   .page3 {
     .half {
-      height: 42vw;
+      height: 35vw;
       width: 45vw;
     }
     .portfolio-container {
@@ -111,6 +113,9 @@
         top: 5px;
         right: 5px;
         left: 5px;
+        p:nth-child(2) {
+          display: none;
+        }
       }
     }
     .nav-arrows {
