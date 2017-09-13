@@ -27,6 +27,9 @@
     h4 {
       display: none;
     }
+    .page-container {
+      justify-content: flex-start;
+    }
     .image-container {
       margin: 10px;
       .description {
@@ -61,6 +64,7 @@
 @media (max-width:414px) {
   .page1 {
     header {
+      top: 45%;
       i {
         font-size: 1em;
         height: 35px;
@@ -72,6 +76,9 @@
     }
   }
   .page2 {
+    .page-container {
+      top: 43%;
+    }
     .about {
       margin: 0;
       font-size: 0.8em;
@@ -87,7 +94,7 @@
   }
   .page3 {
     .half {
-      height: 45vw;
+      height: 42vw;
       width: 45vw;
     }
     .portfolio-container {
