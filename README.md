@@ -3,7 +3,7 @@
 Hi there! my name is Pablo Jurado I am a developer/designer from Houston.
 I like to redesign my portfolio every year just for fun and to try new libraries.
 
-> status: work in progress
+[Link](http://pablojurado.com/)
 
 <img src="pablo_jurado_portfolio.jpg" alt="pablo jurado portfolio">
 
