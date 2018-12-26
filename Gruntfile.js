@@ -5,11 +5,11 @@ module.exports = function (grunt) {
       dist: {
         src: [
           'src-js/vendor/jquery-3.2.1.js',
-          // 'src-js/vendor/modernizr-2.8.3.min.js',
           'src-js/vendor/jquery.onepage-scroll.js',
           'src-js/vendor/velocity.js',
           'src-js/vendor/velocity.ui.js',
           'src-js/vendor/imagesloaded.pkgd.js',
+          'src-js/vendor/slick.js',
           'src-js/main.js'
         ],
         dest: 'js/main.js'

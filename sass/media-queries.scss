@@ -1,14 +1,8 @@
 /****************************/
 /***** media queries ********/
 /****************************/
-@media (max-width:1024px) {
-  .half {
-    height: 25vw;
-    width: 25vw;
-  }
-}
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .page2 {
     .page-container {
       flex-direction: column-reverse;
@@ -25,24 +19,19 @@
     h4 {
       display: none;
     }
-    .page-container {
-      // justify-content: flex-start;
-    }
+
     .image-container {
       margin: 10px;
-      .description {
-        padding: 2.5px;
-        top: 5px;
-        right: 5px;
-        left: 5px;
-      }
     }
   }
   .portfolio-nav {
     font-size: 0.8em;
     margin-top: 0;
   }
-  .graphic, .web, .programming, .animation {
+  .graphic,
+  .web,
+  .programming,
+  .animation {
     flex-direction: column;
   }
   .portfolio-container {
@@ -53,13 +42,13 @@
     display: flex;
     justify-content: center;
   }
-  .half {
-    height: 35vw;
-    width: 35vw;
+
+  .nav-arrows {
+    display: none;
   }
 }
 
-@media (max-width:414px) {
+@media (max-width: 414px) {
   .page1 {
     header {
       top: 45%;
@@ -95,10 +84,6 @@
     }
   }
   .page3 {
-    .half {
-      height: 35vw;
-      width: 45vw;
-    }
     .portfolio-container {
       font-size: 0.5em;
     }
@@ -108,18 +93,6 @@
     }
     .image-container {
       margin: 5px;
-      .description {
-        padding: 2.5px;
-        top: 5px;
-        right: 5px;
-        left: 5px;
-        p:nth-child(2) {
-          display: none;
-        }
-      }
-    }
-    .nav-arrows {
-      display: none;
     }
   }
 }

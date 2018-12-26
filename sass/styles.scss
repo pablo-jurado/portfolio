@@ -3,14 +3,14 @@
 /***********************/
 
 html {
-   height: 100%;
+  height: 100%;
 }
 
 body {
-  background: #E2E4E7;
+  background: #e2e4e7;
   padding: 0;
   text-align: center;
-  font-family: 'Fira Mono', monospace;
+  font-family: "Fira Mono", monospace;
   position: relative;
   margin: 0;
   height: 100%;
@@ -28,7 +28,7 @@ body {
   float: left;
   width: 100%;
   margin: 0 auto;
-  section  {
+  section {
     overflow: hidden;
     h4 {
       opacity: 0;
@@ -60,15 +60,34 @@ i {
   }
 }
 
-.blue { background: #2196f3; }
-.darkblue { background: #3f51b5; }
-.green { background: #4caf50; }
-.purple { background: #673ab7; }
-.cyan { background: #00bcd4; }
-
+.blue {
+  background: #2196f3;
+}
+.darkblue {
+  background: #3f51b5;
+}
+.green {
+  background: #4caf50;
+}
+.purple {
+  background: #673ab7;
+}
+.cyan {
+  background: #00bcd4;
+}
 
 .gradient-back {
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
   border-radius: 50%;
   z-index: -1;
   animation: animatedgradient 5s ease alternate infinite;
@@ -80,7 +99,7 @@ i {
 
 .gradient-border {
   border: 5px;
-  background: #1D1F20;
+  background: #1d1f20;
   position: relative;
   padding: 5px;
   transition: all 0.2s ease-in-out;
@@ -89,13 +108,23 @@ i {
   }
 }
 .gradient-border:after {
-  content: '';
+  content: "";
   position: absolute;
   top: calc(-1 * 5px);
   left: calc(-1 * 5px);
   height: calc(100% + 5px * 2);
   width: calc(100% + 5px * 2);
-  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
   z-index: -1;
   animation: animatedgradient 5s ease alternate infinite;
   background-size: 300% 300%;
@@ -121,7 +150,17 @@ footer {
   .nav-back {
     height: 2px;
     margin-top: 1px;
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
     z-index: -1;
     animation: animatedgradient 5s ease alternate infinite;
     background-size: 300% 300%;
@@ -129,15 +168,15 @@ footer {
 }
 
 @keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /************************/
@@ -159,8 +198,8 @@ footer {
       width: 4px;
       height: 4px;
       display: block;
-      &:before{
-        content: '';
+      &:before {
+        content: "";
         position: absolute;
         width: 4px;
         height: 4px;
@@ -170,7 +209,7 @@ footer {
         -moz-border-radius: 10px;
       }
     }
-    a.active:before{
+    a.active:before {
       width: 10px;
       height: 10px;
       background: #9e9e9e;
