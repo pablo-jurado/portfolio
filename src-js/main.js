@@ -24,7 +24,7 @@ $(document).ready(function(){
   // ---------------------------------------------------------------------------
   // slide
   // ---------------------------------------------------------------------------
-  var slider = $('.slider').slick({
+  $('.slider').slick({
     infinite: true,
     autoplay: false,
     pauseOnHover: true,
@@ -159,18 +159,28 @@ $(document).ready(function(){
     setFilter(this.id);
   }
 
+  var $slickCache;
   function setFilter(id) {
 
-    slider.slick('slickUnfilter');
+    var slick = $('.slider')[0].slick;
 
-    if (id === "all") {
-      slider.slick('slickUnfilter');
-    } else {
-      slider.slick('slickFilter', function(index, element) {
+    if (slick.$slidesCache !== null) {
+      slick.unload();
+      slick.$slideTrack.children(slick.options.slide).remove();
+      $slickCache.appendTo(slick.$slideTrack);
+      slick.reinit();
+      slick.goTo(0);
+    }
+
+    // Store a deep copy of the original carousel
+    $slickCache = slick.$slides.clone(true, true);
+
+    if (id !== "all") {
+      $('.slider').slick('slickFilter', function(index, element) {
         return $(element).find('.filter-' + id).length > 0;
       })
     }
-    slider.slick('slickGoTo', 0);
+    $('.slider').slick('slickGoTo', 0);
   }
 
   var firstNavItem = portfolioNav.querySelector("a");
