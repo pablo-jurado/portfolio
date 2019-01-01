@@ -36,6 +36,13 @@ $(document).ready(function(){
     nextArrow: $('#navArrowNext'),
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          dots: false,
+        }
+      },
+      {
         breakpoint: 960,
         settings: {
           slidesToShow: 2,
