@@ -1,9 +1,9 @@
 /* global $ */
 $(document).ready(function(){
 
-  // -----------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
   // main scroll setUp
-  // -----------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
 
   $('.main').onepage_scroll({
     sectionContainer: 'section',    // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -19,11 +19,42 @@ $(document).ready(function(){
                                     // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
                                     // the browser's width is less than 600, the fallback will kick in.
     direction: 'vertical'           // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
-  })
+  });
 
-  // -----------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
+  // slide
+  // ---------------------------------------------------------------------------
+  var slider = $('.slider').slick({
+    infinite: true,
+    autoplay: false,
+    pauseOnHover: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    dots: false,
+    variableWidth: false,
+    prevArrow: $('#navArrowPrev'),
+    nextArrow: $('#navArrowNext'),
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 2,
+          dots: false,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          dots: false,
+        }
+      },
+    ]
+  });
+
+  // ---------------------------------------------------------------------------
   // animation
-  // -----------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
   var isAboutShowing = false
   var isHeaderShowing = false
 
@@ -68,9 +99,9 @@ $(document).ready(function(){
   }
 
 
-  // -----------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
   // imgages loader
-  // -----------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
 
   var imgCount = $('body img').length - 1
   var loaderCount = 0
@@ -106,10 +137,50 @@ $(document).ready(function(){
     })
   }
 
+  // ---------------------------------------------------------------------------
+  // Portfolio
+  // ---------------------------------------------------------------------------
+  var portfolioNav = document.querySelector("#portfolioNav");
+  var navLinks = portfolioNav.querySelectorAll("a");
+  var highlight = document.createElement('div');
 
-  // -----------------------------------------------------------------------------
+  highlight.classList.add('animated-border');
+  portfolioNav.append(highlight);
+
+  navLinks.forEach(function(aTag) {
+    aTag.onclick = handleLink;
+  });
+
+  // TODO: fix border position on window resize
+  function handleLink () {
+    var linkAttr = this.getBoundingClientRect();
+    highlight.style.width = linkAttr.width + 'px';
+    highlight.style.transform = 'translate(' +  linkAttr.left + 'px)';
+    setFilter(this.id);
+  }
+
+  function setFilter(id) {
+
+    slider.slick('slickUnfilter');
+
+    if (id === "all") {
+      slider.slick('slickUnfilter');
+    } else {
+      slider.slick('slickFilter', function(index, element) {
+        return $(element).find('.filter-' + id).length > 0;
+      })
+    }
+    slider.slick('slickGoTo', 0);
+  }
+
+  var firstNavItem = portfolioNav.querySelector("a");
+  firstNavItem.click();
+
+
+
+  // ---------------------------------------------------------------------------
   // modal
-  // -----------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------
   $('.modal-btn-graphic').click(function (event) {
     $('#modal-container #modalBody').html('')
     var id = event.target.id
@@ -134,33 +205,5 @@ $(document).ready(function(){
   $('#modal-container').click(function () {
     $(this).addClass('out')
   })
-
-  $('.slider').slick({
-    infinite: true,
-    autoplay: true,
-    pauseOnHover: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: false,
-    variableWidth: false,
-    prevArrow: $('#navArrowPrev'),
-    nextArrow: $('#navArrowNext'),
-    responsive: [
-      {
-        breakpoint: 960,
-        settings: {
-          slidesToShow: 2,
-          dots: false,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          dots: false,
-        }
-      },
-    ]
-  });
 
 });
