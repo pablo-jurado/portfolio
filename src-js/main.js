@@ -148,23 +148,34 @@ $(document).ready(function(){
   // Portfolio
   // ---------------------------------------------------------------------------
   var portfolioNav = document.querySelector("#portfolioNav");
-  var navLinks = portfolioNav.querySelectorAll("a");
+  var portfolioLinks = portfolioNav.querySelectorAll("a");
   var highlight = document.createElement('div');
+  var currentLink = null;
 
   highlight.classList.add('animated-border');
   portfolioNav.append(highlight);
 
-  navLinks.forEach(function(aTag) {
+  portfolioLinks.forEach(function(aTag) {
     aTag.onclick = handleLink;
   });
 
-  // TODO: fix border position on window resize
   function handleLink () {
     var linkAttr = this.getBoundingClientRect();
+    highlight.style.transition = 'all 0.2s ease';
     highlight.style.width = linkAttr.width + 'px';
     highlight.style.transform = 'translate(' +  linkAttr.left + 'px)';
     setFilter(this.id);
+    currentLink = this;
   }
+
+  function handleWindowResize() {
+    var linkAttr = currentLink.getBoundingClientRect();
+    highlight.style.transition = 'none';
+    highlight.style.width = linkAttr.width + 'px';
+    highlight.style.transform = 'translate(' +  linkAttr.left + 'px)';
+  }
+
+  window.addEventListener('resize', handleWindowResize);
 
   var $slickCache;
   function setFilter(id) {
@@ -198,25 +209,27 @@ $(document).ready(function(){
   // ---------------------------------------------------------------------------
   // modal
   // ---------------------------------------------------------------------------
-  $('.modal-btn-graphic').click(function (event) {
-    $('#modal-container #modalBody').html('')
-    var id = event.target.id
+  $('.slider').click(function (event) {
+    var classList = event.target.classList;
+    var id;
+    if (classList.contains('modal-btn-anima')) {
+      $('#modal-container #modalBody').html('')
+      id = event.target.id
 
-    var img = '<img src="img/modal/' + id + '.jpg">'
-    $('#modal-container #modalBody').html(img)
-    $('#modal-container').removeAttr('class').addClass('open')
-  })
+      var movie = '<video autoplay controls>'
+      movie += '<source src="img/modal/' + id + '.mp4" type="video/mp4">'
+      movie += '</video>'
 
-  $('.modal-btn-anima').click(function (event) {
-    $('#modal-container #modalBody').html('')
-    var id = event.target.id
+      $('#modal-container #modalBody').html(movie)
+      $('#modal-container').removeAttr('class').addClass('open')
+    } else if (classList.contains('modal-btn-graphic')) {
+      $('#modal-container #modalBody').html('')
+      id = event.target.id
 
-    var movie = '<video autoplay controls>'
-    movie += '<source src="img/modal/' + id + '.mp4" type="video/mp4">'
-    movie += '</video>'
-
-    $('#modal-container #modalBody').html(movie)
-    $('#modal-container').removeAttr('class').addClass('open')
+      var img = '<img src="img/modal/' + id + '.jpg">'
+      $('#modal-container #modalBody').html(img)
+      $('#modal-container').removeAttr('class').addClass('open')
+    }
   })
 
   $('#modal-container').click(function () {
